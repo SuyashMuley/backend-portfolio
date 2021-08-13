@@ -1,0 +1,24 @@
+---
+application:
+  name: "strapi"
+  project: "portfolio-backend"
+  organization: "QoveryCommunity"
+  publicly_accessible: true
+  cpu: "800m"
+  ram: "512mb"
+  start_timeout: "480s"
+  storage:
+  - name: "data"
+    size: "5GB"
+    type: "ssd"
+    mount_point: "/srv/app"
+databases:
+- type: "MYSQL"
+  name: "my-sql"
+  version: "8"
+routers:
+- name: "main"
+  routes:
+  - application_name: "strapi"
+    paths:
+    - "/*"
